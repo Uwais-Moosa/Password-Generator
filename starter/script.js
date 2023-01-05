@@ -90,7 +90,11 @@ const upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
- 
+ //Check the prompt options (Lowercase/Uppercase/Numeric/Special characters)
+ let lowercasePass = confirm("Add a password featuring lowercase characters: ")
+ let uppercasePass = confirm("Add a password featuring uppercase characters: ")
+ let numericPass = confirm("Add a password featuring numbers: ")
+ let specialCharactersPass = confirm("Add a password featuring special characters: ")
 }
 
 // Function for getting a random element from an array
@@ -101,21 +105,29 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   let passwordText = "";
-  let passArray = [];
+  let passwordLength = 0;
+  let lowercasePass;
+  let uppercasePass;
+  let numericPass;
+  let specialCharactersPass;
 // Step 1: Check length of password
-  let passwordLength = prompt ("How many characters would you like your password to be (Your password must be between 8-128 characters) :");
+  while (passwordLength < 10 || passwordLength > 64) { 
+    passwordLength = prompt ("How many characters would you like your password to be (Your password must be between 10-64 characters) :");
   
-  if (passwordLength < 10 || passwordLength > 64) {
-    alert("Your password must contain between 10 and 64 characters");
-    return;
+  if (isNaN(passwordLength)) {
+    alert("The password length needs to be a number.");
   } else if(passwordLength === null){
     alert("Please try again");
     return;
   } else if (isNaN(passwordLength)) {
     alert("The password length needs to be a number.");
     return;
-  };
-// Step 2: Check the Character types (Lowercass/Uppercase/Numeric/Special characters)
+  } else if(passwordLength < 10 || passwordLength > 64) {
+    alert("Your password must contain between 10 and 64 characters"); 
+  } else {
+    getPasswordOptions();
+  }
+// Step 2: Check the Character types (Lowercase/Uppercase/Numeric/Special characters)
 
 };
 
