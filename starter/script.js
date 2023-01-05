@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+const specialCharacters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+const lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+const upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -90,7 +90,7 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+ 
 }
 
 // Function for getting a random element from an array
@@ -100,9 +100,26 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  let passwordText = "";
+  let passArray = [];
+// Step 1: Check length of password
+  let passwordLength = prompt ("How many characters would you like your password to be (Your password must be between 8-128 characters) :");
+  
+  if (passwordLength < 10 || passwordLength > 64) {
+    alert("Your password must contain between 10 and 64 characters");
+    return;
+  } else if(passwordLength === null){
+    alert("Please try again");
+    return;
+  } else if (isNaN(passwordLength)) {
+    alert("The password length needs to be a number.");
+    return;
+  };
+// Step 2: Check the Character types (Lowercass/Uppercase/Numeric/Special characters)
 
-}
+};
 
+    
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
