@@ -8,6 +8,7 @@ This challenge is a Password Generator written in HTML, CSS and Javascript.
 
 ## Table of Contents
 * [Instructions](#instructions)
+* [Deployment](#deployment)
 
 
 ## Instructions
@@ -35,5 +36,9 @@ The following image shows the web application's appearance and functionality:
       * Special characters ($@%&*, etc)
   * Code should validate for each input and at least one character type should be selected
   * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+
+## Deployment
+
+Here is a quick link to the deployed page: https://uwais-moosa.github.io/Password-Generator/
 
 
